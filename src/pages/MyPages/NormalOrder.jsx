@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import OrderList from '../../components/Lists/MyPageLists/OrderList';
-import Pagination from '../../components/Etc/Pagination';
 import { useGet } from '../../hooks/useFetch';
 import { LoadingSpinner } from '../../components/Etc/LoadingSpinner';
 

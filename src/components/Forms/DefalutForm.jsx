@@ -1,4 +1,3 @@
-import { useCallback, useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { LetterButton } from '../Buttons/LetterButton';
 import { PurpleButton } from '../Buttons/PurpleButton';

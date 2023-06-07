@@ -3,7 +3,7 @@ import axios from 'axios';
 import store from '../redux/store/store';
 
 const axiosInstance = axios.create({
-	baseURL: 'http://ec2-43-201-37-71.ap-northeast-2.compute.amazonaws.com:8080',
+	baseURL: 'http://192.168.0.3:8080',
 	timeout: 3000,
 });
 
