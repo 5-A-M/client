@@ -1,7 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
-// 로컬스토리지에 저장된 토큰을 가져온다.
 const storageAccessToken = localStorage.getItem('accessToken');
 const storageLoginStatus = localStorage.getItem('loginStatus');
 

@@ -3,6 +3,7 @@ import { IoIosArrowForward, IoMdClose } from 'react-icons/io';
 import { useNavigate } from 'react-router-dom';
 import { useCallback, useState } from 'react';
 import { toast } from 'react-toastify';
+
 import { LetterButtonColor } from '../../Buttons/LetterButton';
 import { DotDate } from '../../Etc/ListDate';
 import Price from '../../Etc/Price';
@@ -12,9 +13,7 @@ import { useDelete } from '../../../hooks/useFetch';
 function OrderList({ list }) {
 	const navigate = useNavigate();
 	const [openCancel, setOpenCancel] = useState(false);
-	const { mutate, isLoading, isError, error, response } = useDelete(
-		`/orders/${list.orderId}`,
-	);
+	const { mutate } = useDelete(`/orders/${list.orderId}`);
 
 	const handlePageMove = useCallback(() => {
 		navigate(`/detail/${list.item.itemId}`);

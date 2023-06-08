@@ -16,14 +16,6 @@ function Footer() {
 					</Title>
 					<Title
 						as="a"
-						href="https://github.com/codestates-seb/seb40_main_033"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						GitHub
-					</Title>
-					<Title
-						as="a"
 						href="https://www.figma.com/file/nUM8AqkQE17BEYgI803vO3/%ED%83%80%EB%9D%BD%ED%8C%8C%EC%9B%8C%EC%A0%84%EC%82%AC-%EC%B5%9C%EC%A2%85-%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84%2F%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85?node-id=30%3A2498&t=C1VG7dAxLM3TSKvQ-1"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -42,67 +34,7 @@ function Footer() {
 						</Text>
 						<Text>고객센터: 1234-1234</Text>
 						<Text>E-mail: pillivery@pillivery.com</Text>
-						<Box>
-							<Contents
-								as="a"
-								href="https://github.com/dohyeons"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="first"
-							>
-								도현수
-							</Contents>
-							<Contents
-								as="a"
-								href="https://github.com/uxolrv"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								김세연
-							</Contents>
-							<Contents
-								as="a"
-								href="https://github.com/kihyeoon"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								방기현
-							</Contents>
-							<Contents
-								as="a"
-								href="https://github.com/jihwanAn"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								안지환
-							</Contents>
-							<Contents
-								as="a"
-								href="https://github.com/zirryo"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								김지효
-							</Contents>
-							<Contents
-								as="a"
-								href="https://github.com/jisoo27"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								김지수
-							</Contents>
-							<Contents
-								as="a"
-								href="https://github.com/choizz156"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="last"
-							>
-								최민석
-							</Contents>
-						</Box>
-						<Copyright>© Copyright ⓒ 2022 Pillivery</Copyright>
+						<Copyright>© Copyright ⓒ 2023 Pillivery</Copyright>
 					</BoxLeft>
 					<BoxRight>
 						<Logo />
@@ -145,7 +77,7 @@ const Title = styled.div`
 
 const Body = styled.div`
 	border-top: 1px solid white;
-	height: 220px;
+	height: 180px;
 	display: flex;
 	justify-content: space-between;
 	padding-top: 60px;

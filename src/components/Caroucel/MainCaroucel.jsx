@@ -2,8 +2,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import Slider from 'react-slick';
 import styled from 'styled-components';
-import './slick.css';
-import './slick-theme.css';
 import { useState } from 'react';
 import { MdPlayArrow, MdPause } from 'react-icons/md';
 import { IoIosArrowBack } from 'react-icons/io';

@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { FaHeart } from 'react-icons/fa';
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 import { toast } from 'react-toastify';
 import { usePost } from '../../hooks/useFetch';
 
 function WishlistButton({ isChecked, itemId, setIsChecked }) {
-	const [request, setRequest] = useState(isChecked ? 0 : 1);
+	// const [request, setRequest] = useState(isChecked ? 0 : 1);
+	const request = isChecked ? 0 : 1;
 	const token = localStorage.getItem('accessToken');
 	const { mutate } = usePost(`/wishes/${itemId}?wish=${request}`);
 

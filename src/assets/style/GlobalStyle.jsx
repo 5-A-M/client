@@ -4,10 +4,6 @@ import variables from './GlobalVariables';
 const GlobalStyle = createGlobalStyle`
   @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
 
-  /* @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
-
-  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"); */
-
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,

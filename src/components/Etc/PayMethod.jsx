@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { loadTossPayments } from '@tosspayments/payment-sdk';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { LightPurpleButton } from '../Buttons/PurpleButton';
 import PayPageContainer from './PayPageContainer';
 import Kakao from '../../assets/images/social/kakao.png';
@@ -11,34 +11,57 @@ import axiosInstance from '../../utils/axiosInstance';
 
 export default function PayMethod({ payData }) {
 	const [url, setUrl] = useState('');
-	const { expectPrice, orderId, itemOrders, subscription } = payData;
-	const clientKey = process.env.REACT_APP_CLIENT_API_KEY;
 	const [isPayModal, setPayModal] = useState(false);
-	const tossPay = () =>
-		loadTossPayments(clientKey).then((tossPayments) => {
-			tossPayments.requestPayment('카드', {
+	const navigate = useNavigate();
+
+	const { expectPrice, orderId, itemOrders, subscription } = payData;
+	const clientKey = import.meta.env.VITE_TOSS_CLIENT_API_KEY;
+
+	const tossPay = async () => {
+		const tossPayments = await loadTossPayments(clientKey);
+		try {
+			const paySuccess = await tossPayments.requestPayment('카드', {
 				amount: `${expectPrice}`,
 				orderId: `${orderId}abcdef`,
 				orderName: `${itemOrders.data[0].item.title}, ${itemOrders.data.length} 건`,
-				customerName: `Pillivery`,
-				successUrl:
-					'http://ec2-43-201-37-71.ap-northeast-2.compute.amazonaws.com:8080/payments/general/success',
-				failUrl:
-					'http://ec2-43-201-37-71.ap-northeast-2.compute.amazonaws.com:8080/payments/fail',
-				validHours: 24,
-				cashReceipt: {
-					type: '소득공제',
-				},
+				customerName: 'Pillivery',
 			});
-		});
+			if (paySuccess?.paymentKey) {
+				const res = await axiosInstance.get('/payments/general/success', {
+					params: {
+						orderId: paySuccess.orderId,
+						paymentKey: paySuccess.paymentKey,
+						amount: paySuccess.amount,
+					},
+				});
+
+				if (res.data.status === '200') {
+					alert('구매해주셔서 감사합니다!');
+					navigate('/mypage/order/normal');
+				}
+			} else {
+				console.log(paySuccess);
+				alert('결제 실패. 관리자에게 문의해주세요');
+			}
+		} catch (error) {
+			console.error(error);
+		}
+		return 'finish';
+	};
 
 	const kakaoClick = async () => {
-		const response = await axiosInstance.get(
-			`/payments/kakao-pay?orderId=${orderId}`,
-		);
-		setUrl(response.data.next_redirect_pc_url);
-		setPayModal(true);
+		try {
+			const { data } = await axiosInstance.get(
+				`/payments/kakao-pay?orderId=${orderId}`,
+			);
+			setUrl(data.next_redirect_pc_url);
+			setPayModal(true);
+		} catch (error) {
+			console.error(error);
+			alert('카카오 결제 오류!');
+		}
 	};
+
 	return (
 		<PayPageContainer Info="결제 수단">
 			<ButtonBox className={subscription ? 'sub' : null}>

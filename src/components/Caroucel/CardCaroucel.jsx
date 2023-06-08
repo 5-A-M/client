@@ -1,7 +1,5 @@
 import Slider from 'react-slick';
 import styled from 'styled-components';
-import './slick.css';
-import './slick-theme.css';
 import { IoIosArrowBack } from 'react-icons/io';
 import MainListCard from '../Lists/MainListCard';
 
