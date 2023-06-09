@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { useCallback, useEffect, useState } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import WishlistButton from '../Buttons/WishlistButton';
 import Tag from '../Etc/Tag';
@@ -51,7 +51,7 @@ function Summary({
 		}
 	}, []);
 
-	const { mutate: cartMu, response: cartRes } = usePost(`/carts/${itemId}`);
+	const { mutate: cartMu } = usePost(`/carts/${itemId}`);
 
 	const { mutate: purMu } = usePurchase('/orders/single', path);
 

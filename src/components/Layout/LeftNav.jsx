@@ -6,14 +6,7 @@ import { GrPowerCycle } from 'react-icons/gr';
 import { RiHeartAddLine } from 'react-icons/ri';
 import { AiOutlinePlusCircle, AiOutlineThunderbolt } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import {
-	Skin,
-	Brain,
-	Intestine,
-	TempLogo,
-	Liver,
-	Logo,
-} from '../../assets/Icons';
+import { Skin, Brain, Intestine, Liver, Logo } from '../../assets/Icons';
 
 function LeftNav() {
 	const [openCategories, setOpenCategories] = useState(false);
