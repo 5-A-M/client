@@ -14,22 +14,19 @@ function NoteTalk() {
 	if (isLoading) return <LoadingSpinner />;
 	if (isError) return <div>{error.message}</div>;
 	return (
-		<>
-			<ListContainer>
-				{talks.length === 0 ? (
-					<div className="blank">작성하신 토크가 없습니다.</div>
-				) : (
-					talks.map((talk) => (
-						<MypageTalk
-							key={talk.talkId || `${talk.talkCommentId.toString()}-${talk}`}
-							talk={talk}
-							isReply={talk.reply}
-						/>
-					))
-				)}
-			</ListContainer>
-			{/* <Pagination total="10" limit="8" /> */}
-		</>
+		<ListContainer>
+			{talks.length === 0 ? (
+				<div className="blank">작성하신 토크가 없습니다.</div>
+			) : (
+				talks.map((talk) => (
+					<MypageTalk
+						key={talk.talkId || `${talk.talkCommentId.toString()}-${talk}`}
+						talk={talk}
+						isReply={talk.reply}
+					/>
+				))
+			)}
+		</ListContainer>
 	);
 }
 

@@ -6,20 +6,10 @@ function Footer() {
 		<FooterContainer>
 			<Wrap>
 				<Top>
-					<Title
-						as="a"
-						href="https://codestates.notion.site/40-Team033-Pillivery-830d5cf6ce4d4b6cbc6918d2d676bbb5"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
+					<Title as="a" href="#">
 						서비스 소개
 					</Title>
-					<Title
-						as="a"
-						href="https://www.figma.com/file/nUM8AqkQE17BEYgI803vO3/%ED%83%80%EB%9D%BD%ED%8C%8C%EC%9B%8C%EC%A0%84%EC%82%AC-%EC%B5%9C%EC%A2%85-%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84%2F%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85?node-id=30%3A2498&t=C1VG7dAxLM3TSKvQ-1"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
+					<Title as="a" href="#">
 						Figma
 					</Title>
 				</Top>
@@ -30,7 +20,7 @@ function Footer() {
 						</Text>
 						<Text>
 							사업자 번호: 123-45-678900 , 통신판매업신고번호:
-							2022-서울강남-221204
+							2022-서울강남-123456
 						</Text>
 						<Text>고객센터: 1234-1234</Text>
 						<Text>E-mail: pillivery@pillivery.com</Text>
@@ -97,25 +87,6 @@ const BoxLeft = styled.div`
 	margin-left: 40px;
 `;
 
-const Box = styled.div`
-	display: flex;
-`;
-
-const Contents = styled.div`
-	/* color: var(--gray-200); */
-	font-weight: var(--regular);
-	margin-top: 50px;
-	height: fit-content;
-	padding: 0 20px;
-	border-right: 1px solid var(--gray-200);
-	&.first {
-		padding: 0 20px 0 0;
-	}
-	&.last {
-		border: none;
-	}
-`;
-
 const BoxRight = styled.div`
 	display: flex;
 	justify-content: center;
@@ -128,14 +99,6 @@ const BoxRight = styled.div`
 			fill: var(--gray-200);
 		}
 	}
-`;
-
-const Img = styled.div`
-	border: 1px solid var(--gray-200);
-	width: 60px;
-	height: 60px;
-	margin-top: 30px;
-	margin-right: 30px;
 `;
 
 const Pil = styled.div`

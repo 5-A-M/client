@@ -2,7 +2,6 @@
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { LoadingSpinner } from '../../components/Etc/LoadingSpinner';
-// import Pagination from '../../components/Etc/Pagination';
 import MyPageReviewList from '../../components/Lists/MyPageLists/MyPageReviewList';
 import { useGet } from '../../hooks/useFetch';
 
@@ -19,36 +18,33 @@ function NoteReview() {
 	if (isError) return <div>{error.message}</div>;
 
 	return (
-		<>
-			<ListContainer>
-				{lists.length === 0 ? (
-					<div className="blank">작성하신 리뷰가 없습니다.</div>
-				) : (
-					lists?.map((list) => (
-						<MyPageReviewList
-							key={list.reviewId}
-							createdAt={list.createdAt}
-							content={list.content}
-							quantity={list.quantity}
-							reviewId={list.reviewId}
-							star={list.star}
-							userId={list.userId}
-							itemId={list.item.itemId}
-							brand={list.item.brand}
-							thumbnail={list.item.thumbnail}
-							title={list.item.title}
-							capacity={list.item.capacity}
-							nowPrice={list.item.disCountPrice || list.item.price}
-							discountRate={
-								list.item.discountRate === 0 ? '' : list.item.discountRate
-							}
-							beforePrice={list.item.disCountPrice ? list.item.price : null}
-						/>
-					))
-				)}
-			</ListContainer>
-			{/* <Pagination total="10" limit="8" /> */}
-		</>
+		<ListContainer>
+			{lists.length === 0 ? (
+				<div className="blank">작성하신 리뷰가 없습니다.</div>
+			) : (
+				lists?.map((list) => (
+					<MyPageReviewList
+						key={list.reviewId}
+						createdAt={list.createdAt}
+						content={list.content}
+						quantity={list.quantity}
+						reviewId={list.reviewId}
+						star={list.star}
+						userId={list.userId}
+						itemId={list.item.itemId}
+						brand={list.item.brand}
+						thumbnail={list.item.thumbnail}
+						title={list.item.title}
+						capacity={list.item.capacity}
+						nowPrice={list.item.disCountPrice || list.item.price}
+						discountRate={
+							list.item.discountRate === 0 ? '' : list.item.discountRate
+						}
+						beforePrice={list.item.disCountPrice ? list.item.price : null}
+					/>
+				))
+			)}
+		</ListContainer>
 	);
 }
 
